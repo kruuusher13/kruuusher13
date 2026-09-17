@@ -1,53 +1,61 @@
-# Hi there, I'm Romir 👋
-**Computer Vision | Spatial Analytics | Data Science | Probabilistic Modeling | Embedded Systems**
+# Romir Malik
 
-I sit at the intersection of **Geometry, Probability, and Vision**. I build systems that transform massive, chaotic datasets into actionable intelligence for Autonomous Systems, Healthcare, and Edge Computing.
+I build machine learning systems in which computational cost is a design constraint. The work runs
+from HPC down to silicon: pricing a GPT-NL data curation run on the Dutch national supercomputer
+before it is launched, perception for a vehicle with no GPS, and inference on the programmable logic
+of a satellite die.
 
-Currently based in **Utrecht, Netherlands**, bridging the gap between academia and industry as the **Head of External Relations** at the Utrecht Data Science Community.
+MSc Applied Data Science, Utrecht University. Founding engineer at Torxflow, data scientist at
+ConcertLab, and Head of External Relations at the Utrecht Data Science Community. Based in Utrecht.
 
----
+**[The full record, with interactive figures and the working behind each result](https://kruuusher13.github.io/Portfolio/)**
 
-### 🛠️ Technical Arsenal
+## Selected work
 
-| Domain | Stack |
-| :--- | :--- |
-| **Robotics & Sim** | ![ROS2](https://img.shields.io/badge/ROS2-22314E?style=flat&logo=ros&logoColor=white) ![Gazebo](https://img.shields.io/badge/Gazebo-orange?style=flat&logo=gazebo&logoColor=white) ![BlueROV](https://img.shields.io/badge/BlueROV-004481?style=flat) |
-| **Computer Vision** | ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white) ![YOLO](https://img.shields.io/badge/YOLOv8-00FFFF?style=flat) ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white) |
-| **Hardware / Edge** | ![FPGA](https://img.shields.io/badge/Xilinx_FPGA-C8102E?style=flat) ![Verilog](https://img.shields.io/badge/Verilog-CS?style=flat) ![MPSoC](https://img.shields.io/badge/Zynq_MPSoC-000000?style=flat) |
-| **Languages** | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white) ![MATLAB](https://img.shields.io/badge/MATLAB-e76300?style=flat&logo=mathworks&logoColor=white) |
+**[gptnl-energy-estimation-ekf](https://github.com/kruuusher13/gptnl-energy-estimation-ekf)**
+Predicts the energy, cost and CO2 of a GPT-NL data curation run on Snellius before it is launched.
+A per stage law `E = c0 + c1*n` fitted from short calibration trials, an extended Kalman filter with
+an innovation gate correcting the prior against live EAR telemetry, and transfer across four corpora
+differing 100 fold in mean document length. Predicts a held out 400k document run to 2.8% error;
+gating one contaminated reading moved final error from +93% to +8%. MSc thesis at TNO, shipped as a
+command line tool with `forecast`, `monitor` and `calibrate`.
 
----
+**[Chess-Bot-20M](https://github.com/kruuusher13/Chess-Bot-20M)**
+Move selection as classification over the 1,968 legal UCI moves rather than as text generation, with
+legality applied as a mask before the argmax so illegal moves are arithmetically unreachable. 38.9M
+parameters, 12 layers, trained on 20M positions: 50% top-1 accuracy, zero illegal moves, 50 ms per
+move on CPU.
 
-### 🔭 Featured Work
+**[UnitreeL1-pointLIO2](https://github.com/kruuusher13/UnitreeL1-pointLIO2)**
+Containerised Point-LIO state estimation for a Unitree Go2 carrying an L1 lidar, in one Docker
+environment that behaves identically on ARM64 and AMD64. Ablations locate the failure modes:
+coarsening the voxel filter drifts earlier, and disabling online extrinsic estimation tilts the map
+immediately.
 
-#### 🌊 [BlueROV Object Avoidance & Navigation](https://github.com/kruuusher13/BlueRov-Object-Avoidance)
-> **Stack:** ROS2, ZoeDepth, ORB-SLAM3, YOLOv8
->
-> A comprehensive autonomy framework for UUVs combining monocular depth estimation with APF (Artificial Potential Fields) for real-time obstacle avoidance in GPS-denied environments.
+**[APF](https://github.com/kruuusher13/APF)** and
+**[BlueRov-Object-Avoidance](https://github.com/kruuusher13/BlueRov-Object-Avoidance)**
+Monocular perception and artificial potential field avoidance for an unmanned underwater vehicle
+with no GPS, built at CSIR National Institute of Oceanography. Monocular depth over a stereo rig
+because a second pressure housing adds a failure mode and its calibration drifts with depth.
+Validated in a BlueROV2 Gazebo environment, with vehicle dynamics modelled for the
+[Maya AUV](https://github.com/kruuusher13/Maya_AUV).
 
-#### 🛰️ [Hardware-Accelerated Object Detection (ISRO)](https://github.com/kruuusher13)
-> **Stack:** Xilinx MPSoC, FPGA, Verilog
->
-> Developed at **ISRO (SAC)**. A heterogeneous computing pipeline offloading convolution layers to FPGA fabric, achieving **4x faster inference** and sub-15ms latency for satellite edge applications.
+**[Rope-augmented path following and control of a remotely operated underwater vehicle](https://ieeexplore.ieee.org/document/10465897)**
+IEEE APSCON 2024. Holding an ROV steady in the turbulent water below a dam, so vision based erosion
+inspection can run without sending divers down.
 
-#### ⚓ [IEEE Paper: Rope-Augmented AUV Control](https://ieeexplore.ieee.org/document/10465897)
-> **Stack:** Control Theory, Computer Vision, ROS Noetic
->
-> Published a novel control algorithm for stabilizing underwater vehicles during high-current dam inspections, reducing the need for manual diver intervention.
+## Working on
 
----
+**[Torxflow](https://torxflow.nl)**, as founding engineer: a garage management platform for Dutch
+workshops built around three intelligence modules, smart scheduling, vehicle intelligence and AI
+diagnosis, running over the systems a workshop already uses. Graduated from the UtrechtInc
+validation programme.
 
-### 📊 GitHub Analytics
+**[ConcertLab](https://concertlab.com)**, as data scientist: the measurement layer for a filming
+studio that had no instrumentation, and the strategy model behind it.
 
-<div align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=kruuusher13&show_icons=true&theme=radical&hide_border=true&count_private=true" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=kruuusher13&layout=compact&theme=radical&hide_border=true" />
-</div>
+## Elsewhere
 
----
-
-### 🤝 Let's Connect
-<p align="left">
-<a href="https://linkedin.com/in/your-linkedin-handle" target="blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" /></a>
-<a href="mailto:your-email@example.com" target="blank"><img align="center" src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="email" /></a>
-</p>
+- Portfolio and CV: [kruuusher13.github.io/Portfolio](https://kruuusher13.github.io/Portfolio/)
+- LinkedIn: [linkedin.com/in/romirmalik](https://www.linkedin.com/in/romirmalik/)
+- Email: romir.ds10@gmail.com
